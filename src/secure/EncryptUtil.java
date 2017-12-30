@@ -155,7 +155,7 @@ public class EncryptUtil {
         return new String(str);
     }
 
-    public static String normalKey(String key){
+    private static String normalKey(String key){
         try {
             byte[] digest = MessageDigest.getInstance("SHA-256").digest(key.getBytes(Charset.forName("UTF-8")));
             return Base64.getEncoder().encodeToString(digest).substring( 0, NORMAL_KEY_SIZE );
